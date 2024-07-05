@@ -1,0 +1,30 @@
+LAPORAN PRAKTIKUM UAS Muhammmad Zacky Alghifari I.2310702
+
+1. Pembuatan Tabel
+
+Tabel yang dibuat:
+- users: Menyimpan data pengguna dengan kolom id, username, password, dan role.
+- profiles: Menyimpan profil pengguna dengan kolom profile_id, user_id, full_name, birthdate, dan bio.
+- posts: Menyimpan postingan dengan kolom post_id, user_id, title, content, dan created_at.
+- comments: Menyimpan komentar dengan kolom comment_id, post_id, user_id, comment_text, dan commented_at.
+
+2. Pengisian Data
+
+Data yang dimasukkan ke dalam tabel:
+- users: Menyimpan tiga pengguna dengan password yang di-hash menggunakan MD5.
+- profiles: Menyimpan profil masing-masing pengguna.
+- posts: Menyimpan tiga postingan dari pengguna yang berbeda.
+- comments: Menyimpan tiga komentar pada postingan yang berbeda.
+
+3. Query untuk Menampilkan Data
+
+Query yang digunakan:
+- Menampilkan data pengguna dan profilnya:
+  ```sql
+  SELECT 
+      u.username, 
+      p.full_name, 
+      p.bio 
+  FROM 
+      users u
+      JOIN profiles p ON u.id = p.user_id;
